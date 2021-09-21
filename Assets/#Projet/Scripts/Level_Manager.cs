@@ -13,7 +13,9 @@ public class Level_Manager : MonoBehaviour
     public int scoreNow=0;
     public Item item;
 
-    
+    public UnityEvent whenPlayerWins;
+    public UnityEvent whenPlayerLose;
+
 
 
     void Start()

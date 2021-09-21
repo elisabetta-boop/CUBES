@@ -47,13 +47,17 @@ public class Item : MonoBehaviour
         {
             StartCoroutine(SelfDestruct());
         }
-        if (manager.scoreNow <30)
+        if (manager.scoreNow <scoreWin)
         {
             Debug.Log("total score: " + manager.scoreNow);
+        }
+        else if (manager.scoreNow <0) {
+            manager.whenPlayerLose?.Invoke();
         }
         else
         {
             Debug.Log("YOU WIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            manager.whenPlayerWins?.Invoke();
         }
         // timer -= Time.deltaTime;
         // // if (timer == timerZero)
